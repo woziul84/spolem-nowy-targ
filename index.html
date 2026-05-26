@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Społem Nowy Targ — lokalne sklepy, świeże produkty</title>
+  <meta name="description" content="Społem PSS im. Wł. Orkana w Nowym Targu — sklepy Gama i Społem, świeże produkty, Karta Klienta, aplikacja Nasza Gama, Karta Mieszkańca, system kaucyjny i lokalne produkty.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Archiwalna reklama Społem - bezpieczna wersja bez iframe YouTube */
+    .archive-video-section{
+      padding:90px 20px;
+      background:linear-gradient(135deg,#fff7f7 0%,#ffffff 48%,#f7fff7 100%);
+      text-align:center;
+      overflow:hidden;
+    }
+    .archive-video-section .archive-video-container{
+      max-width:1180px;
+      margin:0 auto;
+    }
+    .archive-video-section h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2rem,4.6vw,4.2rem);
+      line-height:1.05;
+      margin:8px 0 14px;
+      color:#9d0000;
+      font-weight:900;
+    }
+    .archive-video-section .archive-video-lead{
+      max-width:760px;
+      margin:0 auto 34px;
+      color:#51433d;
+      font-size:1.08rem;
+      line-height:1.7;
+    }
+    .youtube-card{
+      position:relative;
+      display:block;
+      max-width:1080px;
+      margin:0 auto;
+      border-radius:30px;
+      overflow:hidden;
+      background:#160404;
+      box-shadow:0 28px 80px rgba(0,0,0,.24),0 12px 28px rgba(157,0,0,.2);
+      text-decoration:none;
+      color:#fff;
+      isolation:isolate;
+    }
+    .youtube-card::before{
+      content:'';
+      display:block;
+      padding-top:56.25%;
+    }
+    .youtube-card img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:.72;
+      transform:scale(1.02);
+      transition:transform .55s ease,opacity .55s ease;
+    }
+    .youtube-card::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,rgba(60,0,0,.82),rgba(120,0,0,.35),rgba(0,0,0,.18));
+      z-index:1;
+    }
+    .youtube-card:hover img{
+      transform:scale(1.07);
+      opacity:.86;
+    }
+    .youtube-card-content{
+      position:absolute;
+      z-index:2;
+      inset:auto auto 48px 48px;
+      text-align:left;
+      max-width:620px;
+    }
+    .youtube-card-content small{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.92);
+      color:#9d0000;
+      font-weight:900;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .youtube-card-content strong{
+      display:block;
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.9rem,4vw,3.6rem);
+      line-height:1.04;
+      text-shadow:0 12px 32px rgba(0,0,0,.45);
+    }
+    .youtube-play{
+      position:absolute;
+      z-index:3;
+      top:50%;
+      left:50%;
+      width:96px;
+      height:96px;
+      transform:translate(-50%,-50%);
+      border-radius:50%;
+      background:#fff;
+      box-shadow:0 18px 50px rgba(0,0,0,.35);
+      display:grid;
+      place-items:center;
+      transition:transform .3s ease;
+    }
+    .youtube-play span{
+      display:block;
+      width:0;
+      height:0;
+      border-top:18px solid transparent;
+      border-bottom:18px solid transparent;
+      border-left:28px solid #b40000;
+      margin-left:8px;
+    }
+    .youtube-card:hover .youtube-play{
+      transform:translate(-50%,-50%) scale(1.08);
+    }
+    .youtube-note{
+      margin-top:18px;
+      color:#6b5a52;
+      font-size:.96rem;
+    }
+    @media(max-width:760px){
+      .archive-video-section{padding:65px 14px;}
+      .youtube-card{border-radius:22px;}
+      .youtube-play{width:72px;height:72px;}
+      .youtube-play span{border-top-width:14px;border-bottom-width:14px;border-left-width:22px;}
+      .youtube-card-content{left:22px;right:22px;bottom:24px;}
+      .youtube-card-content small{font-size:.7rem;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header" id="top">
+  <nav class="top-nav">
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <div class="menu" id="menu">
+      <a href="#top">Strona główna</a>
+      <a href="#sklepy">Sklepy</a>
+      <a href="#lokalnie">Oferta</a>
+      <a href="#karty">Karta Klienta</a>
+      <a href="#promocje">Aplikacja</a>
+      <a href="#spoldzielnia">Aktualności</a>
+      <a href="#wynajem">Wynajem</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </nav>
+  <div class="header-main">
+    <a class="brand" href="#top" aria-label="Społem Nowy Targ">
+      <img src="assets/logo-symbol.png" alt="Społem" class="brand-symbol">
+      <div class="brand-text">
+        <span>Społem PSS</span>
+        <span>im. Wł. Orkana w Nowym Targu</span>
+        <small>lokalne sklepy, świeże produkty, tradycja i wygoda</small>
+      </div>
+    </a>
+    <div class="header-info contact-only">
+      <a class="contact-item" href="tel:+48182662625"><span class="info-icon">☎</span><span><strong>Biuro</strong><b>18 266 26 25</b><small>biuro@spolem.com</small></span></a>
+      <a class="contact-item" href="tel:+48500114177"><span class="info-icon">☎</span><span><strong>Detal</strong><b>500 114 177</b><small>tomasz.w@spolem.com</small></span></a>      
+      <a class="contact-item" href="tel:+48500114175"><span class="info-icon">☎</span><span><strong>Administracja</strong><b>500 114 175</b><small>jacek.f@spolem.com</small></span></a>
+      <a class="contact-item" href="tel:+48510188215"><span class="info-icon">☎</span><span><strong>Księgowość</strong><b>510 188 215</b><small>finanse@spolem.com</small></span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero hero-slider" aria-label="Slider Społem Nowy Targ">
+  <article class="hero-slide is-active" data-slide="0">
+    <img src="assets/kurczak-ziemniaki.jpg" alt="Pieczone udka, skrzydełka i ziemniaczki">
+    <div class="hero-art purple-panel">
+      <p class="hero-over">Świeżo, lokalnie,</p>
+      <h1>po góralsku!</h1>
+      <p class="hero-sub">Codziennie blisko Ciebie</p>
+      <ul>
+        <li>Udka i skrzydełka z kurczaka</li>
+        <li>Pieczone ziemniaczki</li>
+        <li>Świeże produkty na co dzień</li>
+      </ul>
+      <a class="btn primary" href="#lokalnie">Sprawdź naszą ofertę</a>
+    </div>
+  </article>
+  <article class="hero-slide" data-slide="1">
+    <img src="assets/warzywa.jpg" alt="Świeże owoce i warzywa">
+    <div class="hero-art green-panel">
+      <p class="hero-over">Świeże produkty</p>
+      <h1>codziennie<br>na miejscu</h1>
+      <p class="hero-sub">Warzywa, owoce, pieczywo i lokalni dostawcy</p>
+      <ul><li>Soki z Łącka</li><li>Jabłka i gruszki od sadowników</li><li>Produkty z lokalnych piekarni i masarni</li></ul>
+      <a class="btn primary" href="#lokalnie">Poznaj lokalną ofertę</a>
+    </div>
+  </article>
+  <article class="hero-slide" data-slide="2">
+    <img src="assets/gama-app-banner.png" alt="Aplikacja Nasza Gama">
+    <div class="hero-art orange-panel">
+      <p class="hero-over">Promocje w telefonie</p>
+      <h1>Nasza Gama</h1>
+      <p class="hero-sub">Kupony, gazetki i lista zakupów zawsze pod ręką.</p>
+      <a class="btn primary" href="#promocje">Pobierz aplikację</a>
+    </div>
+  </article>
+  <article class="hero-slide" data-slide="3">
+    <img src="assets/hero-drewniak.jpg" alt="Sklep Drewniak Gama">
+    <div class="hero-art red-panel">
+      <p class="hero-over">Sklepy blisko domu</p>
+      <h1 class="store-slide-title">Drewniak, Piątka,<br>Moniczka, Kasia,<br>Gosia, Powstańców</h1>
+      <p class="hero-sub">Znane miejsca, codzienne zakupy i lokalny charakter Nowego Targu.</p>
+      <a class="btn primary" href="#sklepy">Znajdź sklep</a>
+    </div>
+  </article>
+  <button class="hero-arrow prev" aria-label="Poprzedni slajd">‹</button>
+  <button class="hero-arrow next" aria-label="Następny slajd">›</button>
+  <div class="hero-controls" aria-label="Sterowanie sliderem">
+    <button class="slider-dot is-active" data-target="0" aria-label="Slajd 1"></button>
+    <button class="slider-dot" data-target="1" aria-label="Slajd 2"></button>
+    <button class="slider-dot" data-target="2" aria-label="Slajd 3"></button>
+    <button class="slider-dot" data-target="3" aria-label="Slajd 4"></button>
+
+  </div>
+</section>
+
+<section class="quick-cards section-pad">
+  <article class="quick-card reveal"><img src="assets/swieze-logo.svg" alt="Świeże produkty"><h3>Świeże produkty</h3><p>Codziennie świeże warzywa, owoce i produkty regionalne.</p></article>
+  <article class="quick-card reveal"><img src="assets/karta-klienta-spolem-clean.png" alt="Karta Klienta Społem"><h3>Karta Klienta Społem</h3><p>Zyskaj 2% bonifikaty na zakupy z Kartą Klienta Społem. Posiadacze Karty Dużej Rodziny mogą otrzymać 3%.</p></article>
+  <article class="quick-card reveal"><img src="assets/karta-mieszkanca-nowotarska.png" alt="Nowotarska Karta Mieszkańca"><h3>Karta Mieszkańca</h3><p>Honorujemy Nowotarską Kartę Mieszkańca zgodnie z zasadami programu.</p></article>
+  <article class="quick-card reveal"><img src="assets/gama-logo.svg" alt="Aplikacja Nasza Gama"><h3>Aplikacja Nasza Gama</h3><p>Kupony, gazetki, promocje i lista zakupów w telefonie.</p></article>
+  <article class="quick-card reveal"><img src="assets/kaucja-logo.svg" alt="System kaucyjny"><h3>System kaucyjny</h3><p>Oddaj opakowania objęte kaucją w naszych sklepach.</p></article>
+</section>
+
+<section class="section intro-band">
+  <article class="highlander-box reveal">
+    <img src="assets/goral-hat.svg" alt="Góralski charakter">
+    <h2>Podhalański charakter</h2>
+    <p>Jesteśmy stąd. Wspieramy lokalnych producentów, tradycję i codzienne zakupy blisko domu.</p>
+    <a class="btn primary" href="#lokalnie">Dowiedz się więcej</a>
+  </article>
+  <article class="app-promo reveal" id="promocje">
+    <div>
+      <p class="eyebrow orange">Twoje zakupy jeszcze korzystniejsze</p>
+      <h2>Aplikacja Nasza Gama</h2>
+      <ul class="check-list"><li>Kupony rabatowe</li><li>Gazetki w Twoim sklepie</li><li>Lista zakupów</li><li>Wielopaki i promocje</li><li>Wygodne zakupy</li></ul>
+    </div>
+    <img src="assets/gama-app-banner.png" alt="Pobierz aplikację Nasza Gama">
+  </article>
+  <article class="local-products-mini reveal">
+    <h2>Lokalne produkty</h2>
+    <ul class="check-list"><li>Soki z Łącka – świeżo tłoczone</li><li>Jabłka i gruszki od sadowników</li><li>Lokalne piekarnie i masarnie</li><li>Grzyby na święta</li><li>Gotowe dania w wybranych sklepach</li></ul>
+    <a class="btn green" href="#lokalnie">Poznaj ofertę</a>
+  </article>
+</section>
+
+<section class="section section-light" id="lokalnie">
+  <div class="section-head reveal">
+    <p class="eyebrow red">Dlaczego warto kupować lokalnie?</p>
+    <h2>Wybierając nasze sklepy, wspierasz Nowy Targ i lokalnych dostawców.</h2>
+    <p>To nie tylko codzienne zakupy. To także miejsca pracy, lokalne relacje i oferta dopasowana do mieszkańców.</p>
+  </div>
+  <div class="local-grid">
+    <div class="photo-tile large reveal"><img src="assets/warzywa.jpg" alt="Świeże warzywa i owoce"><div><b>Świeże każdego dnia</b><span>warzywa, owoce i produkty na codzienne zakupy</span></div></div>
+    <div class="feature-list reveal"><h3>Lokalne i regionalne produkty</h3><ul><li>świeżo tłoczone soki z Łącka,</li><li>jabłka i gruszki od sadownika z Łącka,</li><li>produkty z lokalnych piekarni i masarni,</li><li>sezonowe grzyby od producenta,</li><li>pieczone udka, skrzydełka i ziemniaczki w wybranych sklepach.</li></ul></div>
+    <div class="photo-tile reveal"><img src="assets/wedliny.jpg" alt="Lada z wędlinami"><div><b>Tradycyjna lada</b><span>wędliny, mięso i lokalny wybór</span></div></div>
+    <div class="photo-tile reveal"><img src="assets/kurczak-ziemniaki.jpg" alt="Pieczone udka i ziemniaczki"><div><b>Gotowe na obiad</b><span>udka, skrzydełka i pieczone ziemniaczki</span></div></div>
+  </div>
+</section>
+
+<section class="section" id="sklepy">
+  <div class="section-head reveal"><p class="eyebrow green">Nasze sklepy</p><h2>Sklepy Społem i Gama w Nowym Targu</h2><p>Sprawdź adres, godziny otwarcia i telefon do wybranej placówki.</p></div>
+  <div class="stores-grid">
+    <article class="store-card reveal"><img src="assets/hero-drewniak.jpg" alt="Drewniak"><div><span class="badge">Gama</span><h3>Drewniak — sklep nr 3</h3><p>ul. Kowaniec 35A</p><p><b>Pn–Pt:</b> 7:00–20:00 • <b>Sob:</b> 7:00–20:00</p><p>kom. +48 572 248 578<br>tel. +48 18 266 25 42</p></div></article>
+    <article class="store-card reveal"><img src="assets/sklep-piatka.jpg" alt="Piątka"><div><span class="badge">Gama</span><h3>Piątka — sklep nr 5</h3><p>os. Bór 12</p><p><b>Pn–Pt:</b> 6:00–18:00 • <b>Sob:</b> 6:00–14:00</p><p>kom. +48 572 248 581<br>tel. +48 18 266 30 48</p></div></article>
+    <article class="store-card reveal"><img src="assets/sklep-moniczka.jpg" alt="Moniczka"><div><span class="badge">Gama</span><h3>Moniczka — sklep nr 21</h3><p>ul. Szaflarska 72</p><p><b>Pn–Pt:</b> 7:00–18:00 • <b>Sob:</b> 7:00–15:00</p><p>kom. +48 572 248 582<br>tel. +48 18 266 21 70</p></div></article>
+    <article class="store-card reveal"><img src="assets/sklep-kasia.jpg" alt="Kasia"><div><span class="badge red-badge">Społem</span><h3>Kasia — sklep nr 33</h3><p>ul. Krzywa 10</p><p><b>Pn–Pt:</b> 7:00–16:00 • <b>Sob:</b> 8:00–13:00</p><p>kom. +48 572 248 586<br>tel. +48 18 266 33 38</p></div></article>
+    <article class="store-card reveal"><img src="assets/szerokie-wnetrze.jpg" alt="Gosia"><div><span class="badge red-badge">Społem</span><h3>Gosia — sklep nr 38</h3><p>ul. Kowaniec 176</p><p><b>Pn–Pt:</b> 6:30–20:30 • <b>Sob:</b> 6:30–20:30</p><p>kom. +48 572 248 587<br>tel. +48 18 266 59 84</p></div></article>
+    <article class="store-card reveal"><img src="assets/gama-wnetrze.jpg" alt="Basia"><div><span class="badge red-badge">Społem</span><h3>Basia — sklep nr 39</h3><p>ul. Powstańców Śląskich 5</p><p><b>Pn–Pt:</b> 6:30–18:00 • <b>Sob:</b> 7:00–14:00</p><p>kom. +48 572 248 588<br>tel. +48 18 266 29 92</p></div></article>
+  </div>
+</section>
+
+<section class="section" id="karty">
+  <div class="cards-two">
+    <article class="loyalty-card reveal"><img src="assets/karta-klienta-spolem-clean.png" alt="Karta Klienta Społem"><div><p class="eyebrow purple">Program lojalnościowy</p><h2>Karta Klienta Społem</h2><p>Dołącz do programu i korzystaj z bonifikaty podczas zakupów w sklepach objętych programem.</p><ul class="check-list"><li>Karta jest bezpłatna.</li><li>Standardowa bonifikata: 2%.</li><li>Dla posiadaczy Karty Dużej Rodziny: 3%.</li><li>Minimalna wartość zakupów objętych bonifikatą: 20 zł.</li></ul><a class="btn primary" href="assets/regulamin-karty-klienta-spolem.doc">Pobierz regulamin</a></div></article>
+    <article class="resident-card reveal"><img src="assets/karta-mieszkanca-nowotarska.png" alt="Nowotarska Karta Mieszkańca"><p class="eyebrow green">Nowy Targ</p><h2>Honorujemy Nowotarską Kartę Mieszkańca</h2><p>Współpracujemy z Urzędem Miasta Nowy Targ i honorujemy Nowotarską Kartę Mieszkańca zgodnie z zasadami programu.</p></article>
+  </div>
+</section>
+
+<section class="section enjoy-section">
+  <div class="enjoy-strip reveal">
+    <div class="enjoy-logo-wrap">
+      <img src="assets/enjoy-soda-logo.png" alt="Enjoy Soda">
+    </div>
+    <div class="enjoy-text">
+      <p class="eyebrow orange">Wymiana w sklepie Społem</p>
+      <h2>W sklepie przy <span>ul. Krzywej 10</span> działa punkt wymiany Enjoy Soda!</h2>
+      <p>Wygodnie wymień butle i zrób codzienne zakupy w jednym miejscu.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="service-grid">
+    <article class="service-card reveal"><span>♻️</span><h3>System kaucyjny</h3><p>W naszych sklepach można oddawać produkty objęte kaucją. Szczegóły dostępne są w placówkach.</p></article>
+    <article class="service-card reveal"><img class="service-logo" src="assets/enjoy-soda-logo.png" alt="Enjoy Soda"><h3>Enjoy Soda</h3><p>W sklepie przy ul. Krzywej 10 działa punkt wymiany Enjoy Soda!</p></article>
+    <article class="service-card reveal"><span>🗞️</span><h3>Gazetki Gama</h3><p>Udostępniamy wybrane promocje i oferty dostępne w ramach sklepów Gama.</p></article>
+    <article class="service-card reveal"><span>🍗</span><h3>Gotowe produkty</h3><p>W wybranych sklepach dostępne są pieczone udka, skrzydełka i ziemniaczki.</p></article>
+  </div>
+</section>
+
+<section class="section history-section history-premium" id="spoldzielnia">
+  <div class="history-hero-new reveal">
+    <div class="history-hero-copy">
+      <p class="eyebrow red">Historia Społem w Nowym Targu</p>
+      <h2>Od spółdzielczej idei do sklepów, które pamiętają pokolenia mieszkańców.</h2>
+      <p>Historia „Społem” PSS im. Władysława Orkana w Nowym Targu to opowieść o lokalnym handlu, pracy wielu ludzi, własnej produkcji, sklepach osiedlowych i codziennym zaopatrzeniu miasta. Spółdzielnia rosła razem z Nowym Targiem — od powojennych placówek, przez własne zaplecze produkcyjne, po współczesne sklepy blisko domu.</p>
+      <div class="history-hero-points">
+        <span>tradycja</span>
+        <span>lokalny handel</span>
+        <span>własna produkcja</span>
+        <span>ludzie Społem</span>
+      </div>
+    </div>
+    <div class="history-hero-photo">
+      <img src="assets/historia-hero-clean.jpg" alt="Archiwalne zdjęcie sklepu Społem w Nowym Targu">
+    </div>
+  </div>
+
+  <div class="history-lead reveal">
+    <p>Korzenie ruchu spółdzielczego sięgają XIX wieku. W Europie spółdzielnie powstawały jako odpowiedź na potrzebę uczciwego handlu, wzajemnej pomocy i poprawy warunków życia zwykłych mieszkańców. Z czasem idea ta dotarła również do Polski i na Podhale, gdzie szczególnego znaczenia nabrała lokalna współpraca, samopomoc i odpowiedzialność za wspólne dobro.</p>
+    <p>Na terenie dawnego powiatu nowotarskiego pierwsze inicjatywy spółdzielczości spożywców pojawiły się już przed wojną. W czasie wojny i po jej zakończeniu działalność była wielokrotnie przerywana, reorganizowana i odbudowywana, ale sama idea przetrwała. Z lokalnej potrzeby zaopatrzenia mieszkańców wyrosła Spółdzielnia, która przez kolejne dekady tworzyła sieć sklepów i zaplecze handlowo‑produkcyjne.</p>
+  </div>
+
+  <div class="timeline history-timeline-new reveal" aria-label="Oś czasu historii Społem Nowy Targ">
+    <article><strong>1844</strong><span>W Anglii działa spółdzielnia Pionierów z Rochdale — jeden z symbolicznych początków nowoczesnego ruchu spółdzielczego.</span></article>
+    <article><strong>1936</strong><span>Na terenie byłego powiatu nowotarskiego powstają pierwsze inicjatywy spółdzielczości spożywców.</span></article>
+    <article><strong>1941</strong><span>W Nowym Targu organizowana jest składnica Społem, stanowiąca ważny punkt zaopatrzenia i działalności handlowej.</span></article>
+    <article><strong>1945</strong><span>Po wojnie lokalni działacze i środowiska społeczne podejmują działania na rzecz odbudowy spółdzielczego handlu.</span></article>
+    <article><strong>1948–1962</strong><span>Rozwijają się sklepy, dawna restauracja „Tunel”, późniejszy „Dunajec”, a także piekarnie i nowa masarnia z ubojnią.</span></article>
+    <article><strong>1990–2000</strong><span>Spółdzielnia przechodzi przez realia gospodarki rynkowej, broniąc swojej pozycji i modernizując placówki.</span></article>
+    <article><strong>Dziś</strong><span>Społem kontynuuje lokalną tradycję, łącząc codzienne zakupy, świeże produkty i obsługę mieszkańców Nowego Targu.</span></article>
+  </div>
+
+  <div class="history-story-grid reveal">
+    <article class="history-story-card">
+      <h3>Sklepy blisko mieszkańców</h3>
+      <p>Archiwalne fotografie pokazują placówki, które przez lata były częścią codziennego rytmu miasta: sklepy przy ul. M. Kopernika, ul. Ludźmierskiej, na Kowańcu czy przy placu Evry. To tam mieszkańcy robili codzienne zakupy, spotykali znajomych i korzystali z lokalnej obsługi.</p>
+    </article>
+    <article class="history-story-card">
+      <h3>Własna produkcja i zaplecze</h3>
+      <p>Spółdzielnia rozwijała nie tylko handel detaliczny, ale również zaplecze produkcyjne. W materiałach archiwalnych pojawiają się piekarnie, produkcja pieczywa, masarnia, stolarnia i zaplecze techniczne. Dzięki temu „Społem” było czymś więcej niż siecią sklepów — było lokalnym organizmem gospodarczym.</p>
+    </article>
+    <article class="history-story-card">
+      <h3>Ludzie, którzy tworzyli Społem</h3>
+      <p>Za historią Spółdzielni stoją konkretni ludzie: pracownicy sklepów, członkowie zarządu, rada nadzorcza i osoby zaangażowane społecznie. To ich praca sprawiła, że marka „Społem” przetrwała zmiany ustrojowe, gospodarcze i rynkowe.</p>
+    </article>
+  </div>
+
+  <div class="history-feature reveal">
+    <img src="assets/historia-feature-pieczywo-clean.jpg" alt="Pieczywo własnej produkcji">
+    <div>
+      <p class="eyebrow orange">Produkcja własna</p>
+      <h3>Pieczywo, masarnia, stolarnia i lokalne zaplecze</h3>
+      <p>W powojennej historii Spółdzielni ważną rolę odgrywały własne zakłady i zaplecze produkcyjne. Działalność piekarnicza, masarska oraz techniczna pomagała utrzymać ciągłość zaopatrzenia i jakość obsługi w sklepach. To właśnie te elementy budowały rozpoznawalność Społem jako firmy głęboko zakorzenionej w mieście.</p>
+    </div>
+  </div>
+
+  <div class="section-head reveal history-gallery-head">
+    <h2>GALERIA ARCHIWALNA</h2>
+    <p>Archiwalne zdjęcia sklepów Społem oraz życia Spółdzielni.</p>
+  </div>
+  <div class="history-gallery-new">
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-01-sklep10-higiena.jpg" alt="Sklep Spożywczo‑Przemysłowy nr 10">
+      <figcaption><strong>Sklep Spożywczo‑Przemysłowy nr 10</strong><span>Wnętrze sklepu przy ul. M. Kopernika — dział artykułów higienicznych i przemysłowych.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-02-sklep10-wnetrze.jpg" alt="Sklep nr 10, ul. M. Kopernika">
+      <figcaption><strong>Sklep nr 10, ul. M. Kopernika</strong><span>Archiwalne wnętrze sklepu spożywczo‑przemysłowego.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-03-sam10.jpg" alt="Sklep SAM 10">
+      <figcaption><strong>Sklep SAM 10</strong><span>Jedna z rozpoznawalnych placówek handlowych w Nowym Targu.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-04-sklep5-ludzmierska.jpg" alt="Sklep nr 5, ul. Ludźmierska">
+      <figcaption><strong>Sklep nr 5, ul. Ludźmierska</strong><span>Wnętrze sklepu nr 5 przy ul. Ludźmierskiej.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-05-spolem-ludzmierska.jpg" alt="Sklep nr 5, ul. Ludźmierska">
+      <figcaption><strong>Sklep nr 5, ul. Ludźmierska</strong><span>Elewacja sklepu Społem przy ul. Ludźmierskiej.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-06-pawilon-abc.jpg" alt="Pawilon A.B.C., pl. Evry">
+      <figcaption><strong>Pawilon A.B.C., pl. Evry</strong><span>Wnętrze pawilonu handlowego A.B.C. przy placu Evry.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-07-sklep3-kowaniec.jpg" alt="Sklep nr 3, ul. Kowaniec">
+      <figcaption><strong>Sklep nr 3, ul. Kowaniec</strong><span>Charakterystyczny budynek sklepu na Kowańcu.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-08-stolarnia.jpg" alt="Stolarnia — produkcja mebli sklepowych">
+      <figcaption><strong>Stolarnia — produkcja mebli sklepowych</strong><span>Zaplecze techniczne Spółdzielni i produkcja mebli sklepowych.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-09-pieczywo.jpg" alt="Pieczywo własnej produkcji">
+      <figcaption><strong>Pieczywo własnej produkcji</strong><span>Własna produkcja piekarnicza była ważną częścią działalności Spółdzielni.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-10-zarzad.jpg" alt="Zarząd Spółdzielni">
+      <figcaption><strong>Zarząd Spółdzielni</strong><span>Od lewej: Wiceprezes Irena Rosowska, Prezes Wojciech Kryj, Wiceprezes ds. ekonomicznych Krystyna Klocek.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-11-rada-nadzorcza.jpg" alt="Rada Nadzorcza">
+      <figcaption><strong>Rada Nadzorcza</strong><span>Archiwalne zdjęcie Rady Nadzorczej Spółdzielni.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-12-burmistrz-prezes.jpg" alt="Współpraca z miastem">
+      <figcaption><strong>Współpraca z miastem</strong><span>Burmistrz Marek Fryźlewicz i Prezes Wojciech Kryj.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-13-mikolaj.jpg" alt="Św. Mikołaj w Społem">
+      <figcaption><strong>Św. Mikołaj w Społem</strong><span>Konkurs na najmniejsze chodzące dziecko — zwyciężczyni odbiera nagrodę.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-14-dawny-sklep.jpg" alt="Dawna placówka handlowa">
+      <figcaption><strong>Dawna placówka handlowa</strong><span>Archiwalne ujęcie jednej z dawnych placówek handlowych.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/galeria-15-lata-50.jpg" alt="Placówki handlowe z lat 50.">
+      <figcaption><strong>Placówki handlowe z lat 50.</strong><span>Jedno z archiwalnych zdjęć dokumentujących handel spółdzielczy w Nowym Targu.</span></figcaption>
+    </figure>
+    <figure class="history-gallery-card reveal">
+      <img src="assets/extra-01-dawna-placowka.jpg" alt="Placówki handlowe z lat 50.">
+      <figcaption><strong>Placówki handlowe z lat 50.</strong><span>Jedno z archiwalnych zdjęć dokumentujących handel spółdzielczy w Nowym Targu.</span></figcaption>
+    </figure>
+      <figure class="history-gallery-card reveal">
+      <img src="assets/extra-02-kowaniec-alkohole.jpg" alt="Archiwalne zdjęcie sklepu nr 3.">
+      <figcaption><strong>Archiwalne zdjęcie sklepu nr 3.</strong><span>Sklep nr 3, ul.Kowaniec</span></figcaption>
+    </figure>
+   
+      <figure class="history-gallery-card reveal">
+      <img src="assets/extra-04-abc-mieso.jpg" alt="Sklep Społem w pawilonie handlowym.">
+      <figcaption><strong>Sklep Społem w pawilonie handlowym.</strong><span>Pawilon handlowy A.B.C. przy pl. Evry</span></figcaption>
+    </figure>
+      <figure class="history-gallery-card reveal">
+      <img src="assets/extra-05-pawilon.jpg" alt="Pawilon A.B.C.">
+      <figcaption><strong>Pawilon A.B.C.</strong><span>Kolejne archiwalne zdjęcie sklepu Społem w pawilonie A.B.C.</span></figcaption>
+    </figure>
+      <figure class="history-gallery-card reveal">
+      <img src="assets/extra-06-kopernika-wnetrze2.jpg" alt="Wnętrze sklepu nr 10 przy ul. Kopernika.">
+      <figcaption><strong>Wnętrze sklepu nr 10 przy ul. Kopernika.</strong><span>Sklep nr 10 przy ul. Kopernika w Nowym Targu.</span></figcaption>
+    </figure>
+      <figure class="history-gallery-card reveal">
+      <img src="assets/extra-07-abc-alkohole.jpg" alt="Również wnętrze sklepu nr 10 przy ul. Kopernika.">
+      <figcaption><strong>Również wnętrze sklepu nr 10 przy ul. Kopernika.</strong><span>Zdjęcie wnętrza nieistniejącego już sklepu nr 10.</span></figcaption>
+    </figure>
+
+
+
+  </div>
+</section>
+
+<section class="archive-video-section reveal" id="archiwalna-reklama">
+  <div class="archive-video-container">
+    <h2>Archiwalna reklama Społem PSS w Nowym Targu<BR>zrealizwana w latach 90 <br>przez Nowotarską Telwizję Kablową.</h2>
+    <p class="archive-video-lead">Krótki materiał filmowy z archiwum Społem. 
+       <br>Kliknięcie otworzy film bezpośrednio w serwisie YouTube.</p>
+
+    <a class="youtube-card" href="https://www.youtube.com/watch?v=ncwcIoO_cCI" target="_blank" rel="noopener" aria-label="Obejrzyj film: Archiwalna reklama Społem w Nowym Targu na YouTube">
+      <img src="https://img.youtube.com/vi/ncwcIoO_cCI/hqdefault.jpg" alt="Archiwalna reklama Społem w Nowym Targu">
+      <span class="youtube-play" aria-hidden="true"><span></span></span>
+      <span class="youtube-card-content">
+        <small>▶ Obejrzyj na YouTube</small>
+        <strong>Archiwalna reklama Społem w Nowym Targu.</strong>
+      </span>
+    </a>
+  </div>
+</section>
+
+<section class="section" id="wynajem">
+  <div class="coop-grid">
+    <article class="coop-card reveal"><h3>Wynajem lokali użytkowych</h3><p>Aktualnie brak aktywnych ogłoszeń. W sprawie lokali prosimy o kontakt z administracją: <b>500 114 175</b>.</p></article>
+    <article class="coop-card reveal"><h3>Aktualności</h3><p>Komunikaty będą publikowane wtedy, gdy pojawią się ważne informacje dla klientów lub członków Spółdzielni.</p></article>
+    <article class="coop-card reveal"><h3>Dokumenty i informacje</h3><p></p></article>
+  </div>
+</section>
+
+<section class="section contact" id="kontakt">
+  <div class="contact-panel reveal"><div><p class="eyebrow light">Kontakt</p><h2>„Społem” PSS im. Wł. Orkana</h2><p>ul. Składowa 9, 34-400 Nowy Targ</p><p><a href="mailto:biuro@spolem.com">biuro@spolem.com</a></p></div><div class="contact-list"><p><b>Biuro:</b> 18 266 26 25 • <a href="mailto:biuro@spolem.com">biuro@spolem.com</a></p><p><b>Detal:</b> 500 114 177 • <a href="mailto:tomasz.w@spolem.com">tomasz.w@spolem.com</a></p><p><b>Administracja:</b> 500 114 175 • <a href="mailto:jacek.f@spolem.com">jacek.f@spolem.com</a></p><p><b>Księgowość:</b> 510 188 215 • <a href="mailto:finanse@spolem.com">finanse@spolem.com</a></p><p><b>NIP:</b> 7350009608 • <b>REGON:</b> 001062569 • <b>KRS:</b> 0000186182</p></div></div>
+</section>
+</main>
+<footer class="footer"><div><img src="assets/logo-symbol.png" alt="Społem"><span>© Społem PSS im. Wł. Orkana w Nowym Targu</span></div><a href="#top">Do góry ↑</a></footer>
+<script src="script.js"></script>
+</body>
+</html>
