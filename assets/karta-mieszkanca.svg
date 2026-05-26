@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" role="img" aria-label="Nowotarska Karta Mieszkańca">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f04a36"/><stop offset=".45" stop-color="#f39a2e"/><stop offset="1" stop-color="#1fa84e"/></linearGradient></defs>
+  <rect x="18" y="24" width="484" height="172" rx="28" fill="#fff" stroke="#eee" stroke-width="8"/>
+  <path d="M18 152 L110 78 L185 135 L246 64 L325 132 L390 72 L502 156 L502 196 L18 196Z" fill="url(#g)" opacity=".95"/>
+  <circle cx="88" cy="72" r="24" fill="#ffd45a"/>
+  <text x="42" y="64" font-family="Arial, sans-serif" font-size="26" font-weight="800" fill="#2e3548">NOWOTARSKA</text>
+  <text x="42" y="105" font-family="Arial, sans-serif" font-size="38" font-weight="900" fill="#2e3548">KARTA</text>
+  <text x="42" y="145" font-family="Arial, sans-serif" font-size="36" font-weight="900" fill="#2e3548">MIESZKAŃCA</text>
+  <path d="M400 128c22 0 40 18 40 40s-18 40-40 40-40-18-40-40 18-40 40-40Zm0 17a23 23 0 1 0 0 46 23 23 0 0 0 0-46Z" fill="#fff" opacity=".88"/>
+</svg>

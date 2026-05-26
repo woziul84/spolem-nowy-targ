@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" role="img" aria-label="Kapelusz góralski">
+  <defs><linearGradient id="gold" x1="0" x2="1"><stop stop-color="#fff3b5"/><stop offset=".5" stop-color="#d7a531"/><stop offset="1" stop-color="#8a5d13"/></linearGradient></defs>
+  <ellipse cx="205" cy="210" rx="168" ry="38" fill="#3b2b24"/>
+  <path d="M108 199c14-86 58-132 108-132s87 46 104 132c-52 28-153 28-212 0Z" fill="#3b2b24"/>
+  <path d="M117 177c50 25 142 27 193 0l12 33c-61 31-167 29-220 0Z" fill="#fff"/>
+  <circle cx="157" cy="192" r="11" fill="#d8221a"/><circle cx="205" cy="198" r="11" fill="#d8221a"/><circle cx="253" cy="192" r="11" fill="#d8221a"/>
+  <path d="M292 143c44-41 72-49 89-36-32 7-45 27-50 62-14-3-27-11-39-26Z" fill="url(#gold)"/>
+  <path d="M70 214c52 36 216 43 309-2-22 49-292 48-309 2Z" fill="#2b1d19"/>
+</svg>
